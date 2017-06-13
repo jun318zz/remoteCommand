@@ -1,2 +1,4 @@
 x*
 info.txt
+make_live_ip/checked_ip_list/*
+!make_live_ip/checked_ip_list/README.md
