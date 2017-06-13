@@ -6,4 +6,4 @@
 
 ### Usage
     sh main.sh <ip list file path>
-    (e.g. sh main.sh ip_list/sample/sample_ip_list)
+    (e.g. sh main.sh ip_list/sample/sample_ip_list) 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 XFILE=$1
 DIR=$2

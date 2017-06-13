@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 # Check method: ping, 22_port
 CHECK_METHOD="ping"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 TARGET_FILE=$1
 TARGET_DIR=$(dirname $TARGET_FILE)
