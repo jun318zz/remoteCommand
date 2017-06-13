@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 XFILE=$1
 DIR=$2
@@ -8,7 +8,7 @@ ping_check(){
   ping -c 1 -t 1 $1 > /dev/null 2>&1
   echo $?
 }
-22_port_check(){
+port_22_check(){
   nc -z -w 1 $1 22 > /dev/null 2>&1
   echo $?
 }
