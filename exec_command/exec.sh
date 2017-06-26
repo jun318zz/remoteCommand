@@ -20,7 +20,7 @@ do
     command_result=$(sh $COMMAND_FILE 2>> $ERROR_FILE)
 
     # Write result to csv format file
-    echo "$ip,$command_result" >> $RESULT_FILE
+    echo "$ip""$command_result" >> $RESULT_FILE
 done
 
 echo "done" >> $GLOBAL_STATUS_FILE

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-COMMAND_FILE='command'
+RESULT_DIR="z_result_`date +%Y_%m_%d_%H%M%S`"
+mkdir $RESULT_DIR
 
 
 # Checked ip list file
@@ -9,13 +10,16 @@ TARGET_DIR=$(dirname $TARGET_FILE)
 . ../make_live_ip/split.sh $TARGET_FILE
 
 
-RESULT_DIR="z_result_`date +%Y_%m_%d_%H%M%S`"
-mkdir $RESULT_DIR
+# Make real exec command
+COMMAND_FILE='command'
+for command in $(cat $COMMAND_FILE); do
+	echo "printf \",\$($command)\";" >> ${COMMAND_FILE}_real
+done
 
 
 # Connect server and exec command
 for xfile in $(ls $TARGET_DIR/x*); do
-    . exec.sh $xfile $RESULT_DIR $COMMAND_FILE &
+    . exec.sh $xfile $RESULT_DIR ${COMMAND_FILE}_real &
 done
 
 
@@ -30,6 +34,7 @@ while true; do
     echo "+-------------+"
     echo "|  COMPLETE!  |"
     echo "+-------------+"
+    rm -f ${COMMAND_FILE}_real
     exit
   fi
 done
