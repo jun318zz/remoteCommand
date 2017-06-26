@@ -1,0 +1,3 @@
+printf "$(hostname)";
+printf ",$(date)";
+printf ",$(uptimee)";
